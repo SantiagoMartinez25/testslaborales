@@ -1,5 +1,6 @@
 import './App.css';
 import ButtonAppBar from './components/appBar/AppBar.jsx';
+import RadioButtonsGroup from './components/neopir/NeoPIR'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const theme = createTheme({
@@ -13,7 +14,17 @@ const theme = createTheme({
       main:'#002984',
       contrastText:'#F7FFF7',
     }
-  }
+  },
+
+  components: {
+    MuiFormLabel:{
+      styleOverrides:{
+        root: {
+          textAlign: 'left'
+        }
+      }
+    }
+  },
 })
 
 function App() {
@@ -21,6 +32,7 @@ function App() {
     <div className="App">
       <ThemeProvider theme={theme}>
         <ButtonAppBar/>
+        <RadioButtonsGroup />
       </ThemeProvider>
     </div>
   );
